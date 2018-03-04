@@ -61,6 +61,45 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-189" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/03/189/" class="article-date">
+  <time datetime="2018-03-04T03:31:08.000Z" itemprop="datePublished">2018-03-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/03/189/">189. Rotate Array</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">rotate</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = nums.length;</span><br><span class="line">        <span class="keyword">int</span>[] result = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++ ) &#123;</span><br><span class="line">            result[(i+k)%n] = nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            nums[i] = result[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//space:O(1) time: O(n)O(k)</span></span><br><span class="line"><span class="comment">// class Solution &#123;</span></span><br><span class="line"><span class="comment">//     public void rotate(int[] nums, int k) &#123;</span></span><br><span class="line"><span class="comment">//         int n = nums.length;</span></span><br><span class="line"><span class="comment">//         int temp = 0;</span></span><br><span class="line"><span class="comment">//         int count = 0;</span></span><br><span class="line"><span class="comment">//         k = k % n;</span></span><br><span class="line"><span class="comment">//         int j = k;</span></span><br><span class="line"><span class="comment">//         while (j &gt; 0) &#123;</span></span><br><span class="line"><span class="comment">//             temp = nums[n-k+count];//store the number</span></span><br><span class="line"><span class="comment">//              //part of sequence shift to the left</span></span><br><span class="line"><span class="comment">//             for (int i = n-k+count; i &gt; count; i--) &#123;</span></span><br><span class="line"><span class="comment">//                 nums[i] = nums[i-1];</span></span><br><span class="line"><span class="comment">//             &#125;</span></span><br><span class="line"><span class="comment">//             nums[count++] = temp;</span></span><br><span class="line"><span class="comment">//             j--;</span></span><br><span class="line"><span class="comment">//         &#125;</span></span><br><span class="line"><span class="comment">//     &#125;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://felixwong09.github.io/2018/03/03/189/" data-id="cjec8qbes0000l6w0m9h4i3u3" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-220" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/03/01/220/" class="article-date">
@@ -88,7 +127,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://felixwong09.github.io/2018/03/01/220/" data-id="cje904atq00008mw08a10n648" class="article-share-link">Teilen</a>
+      <a data-url="http://felixwong09.github.io/2018/03/01/220/" data-id="cjec8qbf50005l6w0nignblku" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
@@ -127,7 +166,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://felixwong09.github.io/2018/02/28/219/" data-id="cje904aul00038mw0masv60kp" class="article-share-link">Teilen</a>
+      <a data-url="http://felixwong09.github.io/2018/02/28/219/" data-id="cjec8qbf30004l6w0vwhmshdr" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
@@ -174,7 +213,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://felixwong09.github.io/2018/02/28/hello-world/" data-id="cje904auo00058mw09p85szqc" class="article-share-link">Teilen</a>
+      <a data-url="http://felixwong09.github.io/2018/02/28/hello-world/" data-id="cjec8qbey0002l6w098h13ymd" class="article-share-link">Teilen</a>
       
       
     </footer>
@@ -227,6 +266,10 @@
     <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/03/03/189/">189. Rotate Array</a>
+          </li>
         
           <li>
             <a href="/2018/03/01/220/">220. Contains Duplicate III</a>
