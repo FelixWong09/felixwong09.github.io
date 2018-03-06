@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://felixwong09.github.io"></form>
@@ -60,6 +60,44 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-289" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/06/289/" class="article-date">
+  <time datetime="2018-03-06T22:15:59.000Z" itemprop="datePublished">2018-03-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/06/289/">289. Game of Life</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">gameOfLife</span><span class="params">(<span class="keyword">int</span>[][] board)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">final</span> <span class="keyword">int</span> m = board.length;</span><br><span class="line">        <span class="keyword">final</span> <span class="keyword">int</span> n = board[<span class="number">0</span>].length;</span><br><span class="line">        <span class="comment">// clock wise, starts from the upper-left</span></span><br><span class="line">        <span class="keyword">final</span> <span class="keyword">int</span>[] dx = <span class="keyword">new</span> <span class="keyword">int</span>[] &#123;-<span class="number">1</span>, -<span class="number">1</span>, -<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>&#125;;</span><br><span class="line">        <span class="keyword">final</span> <span class="keyword">int</span>[] dy = <span class="keyword">new</span> <span class="keyword">int</span>[] &#123;-<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, -<span class="number">1</span>, -<span class="number">1</span>&#125;;  </span><br><span class="line">        <span class="comment">//encode</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++) &#123;</span><br><span class="line">                <span class="comment">//go through all the element in the board, </span></span><br><span class="line">                <span class="comment">//and for each element, set its state, count alive neighbors</span></span><br><span class="line">                <span class="keyword">int</span> alive = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; <span class="number">8</span>; k++) &#123;</span><br><span class="line">                    <span class="keyword">final</span> <span class="keyword">int</span> x = i + dx[k];</span><br><span class="line">                    <span class="keyword">final</span> <span class="keyword">int</span> y = j + dy[k];</span><br><span class="line">                    <span class="keyword">if</span> (x &gt; -<span class="number">1</span> &amp;&amp; x &lt; m &amp;&amp; y &gt; -<span class="number">1</span> &amp;&amp; y &lt; n &amp;&amp; </span><br><span class="line">                        (board[x][y] == <span class="number">1</span> || board[x][y] == <span class="number">2</span>)) &#123;</span><br><span class="line">                        alive++;   </span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (board[i][j] == <span class="number">1</span> &amp;&amp; (alive &lt; <span class="number">2</span> || alive &gt; <span class="number">3</span>)) &#123;</span><br><span class="line">                    board[i][j] = <span class="number">2</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (board[i][j] == <span class="number">0</span> &amp;&amp; alive == <span class="number">3</span>) &#123;</span><br><span class="line">                    board[i][j] = <span class="number">3</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//decode</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++) &#123;</span><br><span class="line">                board[i][j] %= <span class="number">2</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//Take advantage of int matrix, store these four states</span></span><br><span class="line"><span class="comment">//0: die to die (originally)</span></span><br><span class="line"><span class="comment">//1: live to live (alive = 2 || 3)</span></span><br><span class="line"><span class="comment">//2: live to die (over or under population)</span></span><br><span class="line"><span class="comment">//3: Dead to live (alive = 3)</span></span><br><span class="line"><span class="comment">//So we need to process the transition of type 2 &amp; 3</span></span><br><span class="line"><span class="comment">//At the end, decode. 0,2-&gt; 0(die)  1,3-&gt; 1(live)</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://felixwong09.github.io/2018/03/06/289/" data-id="cjeg7s8090004x1w09xaj2hdo" class="article-share-link">Compartir</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-238" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -87,7 +125,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://felixwong09.github.io/2018/03/06/238/" data-id="cjeg4vwhh0001r2w0z1vk7tqx" class="article-share-link">Teilen</a>
+      <a data-url="http://felixwong09.github.io/2018/03/06/238/" data-id="cjeg7s80d0008x1w0emhj9tsz" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
@@ -126,7 +164,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://felixwong09.github.io/2018/03/05/169/" data-id="cjeg4vwip0006r2w0zpv9tk3h" class="article-share-link">Teilen</a>
+      <a data-url="http://felixwong09.github.io/2018/03/05/169/" data-id="cjeg7s7zw0000x1w0iob685k7" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
@@ -165,7 +203,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://felixwong09.github.io/2018/03/03/189/" data-id="cjeg4vwhb0000r2w0rp5vxv5f" class="article-share-link">Teilen</a>
+      <a data-url="http://felixwong09.github.io/2018/03/03/189/" data-id="cjeg7s8070003x1w0eyr4ed4g" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
@@ -204,7 +242,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://felixwong09.github.io/2018/03/01/220/" data-id="cjeg4vwis0008r2w01ubc94f5" class="article-share-link">Teilen</a>
+      <a data-url="http://felixwong09.github.io/2018/03/01/220/" data-id="cjeg7s80a0005x1w0biaas8ma" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
@@ -243,7 +281,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://felixwong09.github.io/2018/02/28/219/" data-id="cjeg4vwit000ar2w0g6ofna49" class="article-share-link">Teilen</a>
+      <a data-url="http://felixwong09.github.io/2018/02/28/219/" data-id="cjeg7s8020001x1w0xyabbmuo" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
@@ -290,7 +328,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://felixwong09.github.io/2018/02/28/hello-world/" data-id="cjeg4vwiu000cr2w0gbil84tr" class="article-share-link">Teilen</a>
+      <a data-url="http://felixwong09.github.io/2018/02/28/hello-world/" data-id="cjeg7s80l000ax1w06wshex4b" class="article-share-link">Compartir</a>
       
       
     </footer>
@@ -321,7 +359,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
+    <h3 class="widget-title">Nube de Tags</h3>
     <div class="widget tagcloud">
       <a href="/tags/Leetcode/" style="font-size: 10px;">Leetcode</a>
     </div>
@@ -330,7 +368,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archiv</h3>
+    <h3 class="widget-title">Archivos</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li></ul>
     </div>
@@ -340,9 +378,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">letzter Beitrag</h3>
+    <h3 class="widget-title">Posts recientes</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/03/06/289/">289. Game of Life</a>
+          </li>
         
           <li>
             <a href="/2018/03/06/238/">238. Product of Array Except Self</a>
@@ -360,10 +402,6 @@
             <a href="/2018/03/01/220/">220. Contains Duplicate III</a>
           </li>
         
-          <li>
-            <a href="/2018/02/28/219/">219. Contains Duplicate II</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -377,7 +415,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2018 Zhong Huang<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Construido por <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
