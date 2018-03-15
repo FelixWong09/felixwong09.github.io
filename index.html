@@ -50,7 +50,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://felixwong09.github.io"></form>
@@ -60,6 +60,45 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-206" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/15/206/" class="article-date">
+  <time datetime="2018-03-15T19:56:37.000Z" itemprop="datePublished">2018-03-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/15/206/">206. Reverse Linked List</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * public class ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) &#123; val = x; &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">// p refer to current node, q refer to next node;</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">reverseList</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (head == <span class="keyword">null</span> || head.next == <span class="keyword">null</span>) <span class="keyword">return</span> head;</span><br><span class="line">        </span><br><span class="line">        ListNode tail = <span class="keyword">null</span>;</span><br><span class="line">        ListNode p = head;</span><br><span class="line">        ListNode q = head.next;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> (q != <span class="keyword">null</span>) &#123;</span><br><span class="line">            ListNode tmp = q.next;</span><br><span class="line">            q.next = p;</span><br><span class="line">            p.next = tail;</span><br><span class="line">            </span><br><span class="line">            tail = p;</span><br><span class="line">            p = q;</span><br><span class="line">            q = tmp;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> p;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://felixwong09.github.io/2018/03/15/206/" data-id="cjesxsruf000177w0nm7txrfi" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linkedlist/">Linkedlist</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-135" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -87,7 +126,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://felixwong09.github.io/2018/03/13/135/" data-id="cjeqfgz0p0000mrw0fom4xn0h" class="article-share-link">Teilen</a>
+      <a data-url="http://felixwong09.github.io/2018/03/13/135/" data-id="cjesxsru9000077w0qbjwggkp" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Array/">Array</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
@@ -126,7 +165,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://felixwong09.github.io/2018/03/06/334/" data-id="cjeqfgz2e000nmrw0s86zaobc" class="article-share-link">Teilen</a>
+      <a data-url="http://felixwong09.github.io/2018/03/06/334/" data-id="cjesxsrvz000w77w0kem2iiza" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Array/">Array</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
@@ -164,7 +203,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://felixwong09.github.io/2018/03/06/289/" data-id="cjeqfgz2f000pmrw0t2rawcnh" class="article-share-link">Teilen</a>
+      <a data-url="http://felixwong09.github.io/2018/03/06/289/" data-id="cjesxsrux000b77w0ites5gg2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Array/">Array</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
@@ -202,7 +241,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://felixwong09.github.io/2018/03/06/238/" data-id="cjeqfgz29000jmrw0ljwakjoc" class="article-share-link">Teilen</a>
+      <a data-url="http://felixwong09.github.io/2018/03/06/238/" data-id="cjesxsrup000877w07z34rxpl" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Array/">Array</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
@@ -241,7 +280,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://felixwong09.github.io/2018/03/05/169/" data-id="cjeqfgz100004mrw0m9zw01w3" class="article-share-link">Teilen</a>
+      <a data-url="http://felixwong09.github.io/2018/03/05/169/" data-id="cjesxsruj000377w0630f88bk" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Array/">Array</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
@@ -280,7 +319,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://felixwong09.github.io/2018/03/03/189/" data-id="cjeqfgz0u0001mrw0970vt2my" class="article-share-link">Teilen</a>
+      <a data-url="http://felixwong09.github.io/2018/03/03/189/" data-id="cjesxsrul000477w0bdd2d4wn" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Array/">Array</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
@@ -319,7 +358,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://felixwong09.github.io/2018/03/01/220/" data-id="cjeqfgz2c000lmrw0iwbemdqt" class="article-share-link">Teilen</a>
+      <a data-url="http://felixwong09.github.io/2018/03/01/220/" data-id="cjesxsruo000777w0vaji2r72" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Array/">Array</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
@@ -358,7 +397,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://felixwong09.github.io/2018/02/28/219/" data-id="cjeqfgz0y0003mrw0jr0w3sqf" class="article-share-link">Teilen</a>
+      <a data-url="http://felixwong09.github.io/2018/02/28/219/" data-id="cjesxsrum000577w0k7zs33mp" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Array/">Array</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
@@ -405,7 +444,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://felixwong09.github.io/2018/02/28/hello-world/" data-id="cjeqfgz2g000rmrw0ll54qzgu" class="article-share-link">Teilen</a>
+      <a data-url="http://felixwong09.github.io/2018/02/28/hello-world/" data-id="cjesxsrw2000y77w06spyrw3i" class="article-share-link">Share</a>
       
       
     </footer>
@@ -428,7 +467,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Array/">Array</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Array/">Array</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Leetcode/">Leetcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linkedlist/">Linkedlist</a></li></ul>
     </div>
   </div>
 
@@ -438,14 +477,14 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/Leetcode/" style="font-size: 10px;">Leetcode</a>
+      <a href="/tags/Array/" style="font-size: 15px;">Array</a> <a href="/tags/Leetcode/" style="font-size: 20px;">Leetcode</a> <a href="/tags/Linkedlist/" style="font-size: 10px;">Linkedlist</a>
     </div>
   </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archiv</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li></ul>
     </div>
@@ -455,9 +494,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">letzter Beitrag</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/03/15/206/">206. Reverse Linked List</a>
+          </li>
         
           <li>
             <a href="/2018/03/13/135/">135. Candy</a>
@@ -473,10 +516,6 @@
         
           <li>
             <a href="/2018/03/06/238/">238. Product of Array Except Self</a>
-          </li>
-        
-          <li>
-            <a href="/2018/03/05/169/">169. Majority Element</a>
           </li>
         
       </ul>
