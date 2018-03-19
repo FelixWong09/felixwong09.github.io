@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>134. Gas Station | Zhong&#39;s site</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="DescriptionThere are N gas stations along a circular route, where the amount of gas at station i is gas[i]. You have a car with an unlimited gas tank and it costs cost[i] of gas to travel from station">
+<meta name="keywords" content="Leetcode,Array,Medium">
+<meta property="og:type" content="article">
+<meta property="og:title" content="134. Gas Station">
+<meta property="og:url" content="http://felixwong09.github.io/2018/03/19/134/index.html">
+<meta property="og:site_name" content="Zhong&#39;s site">
+<meta property="og:description" content="DescriptionThere are N gas stations along a circular route, where the amount of gas at station i is gas[i]. You have a car with an unlimited gas tank and it costs cost[i] of gas to travel from station">
+<meta property="og:updated_time" content="2018-03-19T21:09:33.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="134. Gas Station">
+<meta name="twitter:description" content="DescriptionThere are N gas stations along a circular route, where the amount of gas at station i is gas[i]. You have a car with an unlimited gas tank and it costs cost[i] of gas to travel from station">
+  
+    <link rel="alternate" href="/atom.xml" title="Zhong&#39;s site" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Zhong&#39;s site</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://felixwong09.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-134" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/19/134/" class="article-date">
+  <time datetime="2018-03-19T21:07:41.000Z" itemprop="datePublished">2018-03-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      134. Gas Station
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>There are N gas stations along a circular route, where the amount of gas at station i is gas[i].</p>
+<p>You have a car with an unlimited gas tank and it costs cost[i] of gas to travel from station i to its next station (i+1). You begin the journey with an empty tank at one of the gas stations.</p>
+<p>Return the starting gas station’s index if you can travel around the circuit once, otherwise return -1.</p>
+<p>Note:<br>The solution is guaranteed to be unique.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">canCompleteCircuit</span><span class="params">(<span class="keyword">int</span>[] gas, <span class="keyword">int</span>[] cost)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (gas.length &lt;= <span class="number">0</span> ||cost.length &lt;= <span class="number">0</span> || cost.length != gas.length)</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> total = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; gas.length; i++) &#123;</span><br><span class="line">            sum += gas[i] - cost[i];</span><br><span class="line">            total += gas[i] - cost[i];</span><br><span class="line">            <span class="keyword">if</span> (sum &lt; <span class="number">0</span>) &#123; <span class="comment">//it is invalid</span></span><br><span class="line">                sum = <span class="number">0</span>; <span class="comment">//select a new start point</span></span><br><span class="line">                index = i + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> total &gt;= <span class="number">0</span> ? index : -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://felixwong09.github.io/2018/03/19/134/" data-id="cjeyq45120000sgw0eug5c4pv" class="article-share-link">Compartir</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Array/">Array</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Medium/">Medium</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/03/16/92/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Viejo</strong>
+      <div class="article-nav-title">92. Reverse Linked List II</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Array/">Array</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Leetcode/">Leetcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linkedlist/">Linkedlist</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Medium/">Medium</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nube de Tags</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Array/" style="font-size: 15px;">Array</a> <a href="/tags/Leetcode/" style="font-size: 20px;">Leetcode</a> <a href="/tags/Linkedlist/" style="font-size: 10px;">Linkedlist</a> <a href="/tags/Medium/" style="font-size: 10px;">Medium</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archivos</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Posts recientes</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/03/19/134/">134. Gas Station</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/16/92/">92. Reverse Linked List II</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/16/2/">2. Add Two Numbers</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/16/328/">328. Odd Even Linked List</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/15/206/">206. Reverse Linked List</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Zhong Huang<br>
+      Construido por <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

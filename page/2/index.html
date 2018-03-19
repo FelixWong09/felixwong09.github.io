@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://felixwong09.github.io"></form>
@@ -60,6 +60,45 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-189" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/03/189/" class="article-date">
+  <time datetime="2018-03-04T03:31:08.000Z" itemprop="datePublished">2018-03-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/03/189/">189. Rotate Array</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">rotate</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = nums.length;</span><br><span class="line">        <span class="keyword">int</span>[] result = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++ ) &#123;</span><br><span class="line">            result[(i+k)%n] = nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            nums[i] = result[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//space:O(1) time: O(n)O(k)</span></span><br><span class="line"><span class="comment">// class Solution &#123;</span></span><br><span class="line"><span class="comment">//     public void rotate(int[] nums, int k) &#123;</span></span><br><span class="line"><span class="comment">//         int n = nums.length;</span></span><br><span class="line"><span class="comment">//         int temp = 0;</span></span><br><span class="line"><span class="comment">//         int count = 0;</span></span><br><span class="line"><span class="comment">//         k = k % n;</span></span><br><span class="line"><span class="comment">//         int j = k;</span></span><br><span class="line"><span class="comment">//         while (j &gt; 0) &#123;</span></span><br><span class="line"><span class="comment">//             temp = nums[n-k+count];//store the number</span></span><br><span class="line"><span class="comment">//              //part of sequence shift to the left</span></span><br><span class="line"><span class="comment">//             for (int i = n-k+count; i &gt; count; i--) &#123;</span></span><br><span class="line"><span class="comment">//                 nums[i] = nums[i-1];</span></span><br><span class="line"><span class="comment">//             &#125;</span></span><br><span class="line"><span class="comment">//             nums[count++] = temp;</span></span><br><span class="line"><span class="comment">//             j--;</span></span><br><span class="line"><span class="comment">//         &#125;</span></span><br><span class="line"><span class="comment">//     &#125;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://felixwong09.github.io/2018/03/03/189/" data-id="cjeyq451k0004sgw07n2i957f" class="article-share-link">Compartir</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Array/">Array</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-220" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -88,7 +127,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://felixwong09.github.io/2018/03/01/220/" data-id="cjeuhjc7b000ce3w0wqmahmgr" class="article-share-link">Teilen</a>
+      <a data-url="http://felixwong09.github.io/2018/03/01/220/" data-id="cjeyq451s000asgw0g9k0kfn4" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Array/">Array</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
@@ -127,7 +166,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://felixwong09.github.io/2018/02/28/219/" data-id="cjeuhjc780008e3w0lmbppemx" class="article-share-link">Teilen</a>
+      <a data-url="http://felixwong09.github.io/2018/02/28/219/" data-id="cjeyq451q0008sgw04fq3h2q5" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Array/">Array</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
@@ -174,7 +213,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://felixwong09.github.io/2018/02/28/hello-world/" data-id="cjeuhjc7m000oe3w03jo475ic" class="article-share-link">Teilen</a>
+      <a data-url="http://felixwong09.github.io/2018/02/28/hello-world/" data-id="cjeyq4522000msgw0w8eeo436" class="article-share-link">Compartir</a>
       
       
     </footer>
@@ -188,7 +227,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/">&laquo; zurück</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/">&laquo; Previo</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
   </nav>
 
 </section>
@@ -210,16 +249,16 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
+    <h3 class="widget-title">Nube de Tags</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Array/" style="font-size: 16.67px;">Array</a> <a href="/tags/Leetcode/" style="font-size: 20px;">Leetcode</a> <a href="/tags/Linkedlist/" style="font-size: 13.33px;">Linkedlist</a> <a href="/tags/Medium/" style="font-size: 10px;">Medium</a>
+      <a href="/tags/Array/" style="font-size: 15px;">Array</a> <a href="/tags/Leetcode/" style="font-size: 20px;">Leetcode</a> <a href="/tags/Linkedlist/" style="font-size: 10px;">Linkedlist</a> <a href="/tags/Medium/" style="font-size: 10px;">Medium</a>
     </div>
   </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archiv</h3>
+    <h3 class="widget-title">Archivos</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li></ul>
     </div>
@@ -229,9 +268,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">letzter Beitrag</h3>
+    <h3 class="widget-title">Posts recientes</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/03/19/134/">134. Gas Station</a>
+          </li>
         
           <li>
             <a href="/2018/03/16/92/">92. Reverse Linked List II</a>
@@ -249,10 +292,6 @@
             <a href="/2018/03/15/206/">206. Reverse Linked List</a>
           </li>
         
-          <li>
-            <a href="/2018/03/13/135/">135. Candy</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -266,7 +305,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2018 Zhong Huang<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Construido por <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
